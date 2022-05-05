@@ -36,3 +36,5 @@ lerna-debug.log*
 
 # For rest client extension
 *.http
+
+.env
