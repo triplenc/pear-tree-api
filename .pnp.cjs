@@ -39,6 +39,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nestjs/platform-express", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
             ["@nestjs/schematics", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.8"],\
             ["@nestjs/testing", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
+            ["@nestjs/typeorm", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.3"],\
             ["@types/express", "npm:4.17.13"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:16.11.26"],\
@@ -1519,6 +1520,45 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/nestjs__core",\
             "@types/nestjs__microservices",\
             "@types/nestjs__platform-express"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@nestjs/typeorm", [\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/@nestjs-typeorm-npm-8.0.3-82d4115813-01b1fc97f1.zip/node_modules/@nestjs/typeorm/",\
+          "packageDependencies": [\
+            ["@nestjs/typeorm", "npm:8.0.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.3", {\
+          "packageLocation": "./.yarn/__virtual__/@nestjs-typeorm-virtual-97cb09a4b6/0/cache/@nestjs-typeorm-npm-8.0.3-82d4115813-01b1fc97f1.zip/node_modules/@nestjs/typeorm/",\
+          "packageDependencies": [\
+            ["@nestjs/typeorm", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.3"],\
+            ["@nestjs/common", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
+            ["@nestjs/core", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
+            ["@types/nestjs__common", null],\
+            ["@types/nestjs__core", null],\
+            ["@types/reflect-metadata", null],\
+            ["@types/rxjs", null],\
+            ["@types/typeorm", null],\
+            ["reflect-metadata", "npm:0.1.13"],\
+            ["rxjs", "npm:7.5.5"],\
+            ["typeorm", null],\
+            ["uuid", "npm:8.3.2"]\
+          ],\
+          "packagePeers": [\
+            "@nestjs/common",\
+            "@nestjs/core",\
+            "@types/nestjs__common",\
+            "@types/nestjs__core",\
+            "@types/reflect-metadata",\
+            "@types/rxjs",\
+            "@types/typeorm",\
+            "reflect-metadata",\
+            "rxjs",\
+            "typeorm"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7536,6 +7576,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@nestjs/platform-express", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
             ["@nestjs/schematics", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.8"],\
             ["@nestjs/testing", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.4.3"],\
+            ["@nestjs/typeorm", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.0.3"],\
             ["@types/express", "npm:4.17.13"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:16.11.26"],\
