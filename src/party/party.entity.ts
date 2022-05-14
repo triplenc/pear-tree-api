@@ -8,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 import { Category } from '../category/category.entity'
+import { DeliveryPlatform } from '../delivery-platform/delivery-platform.entity'
 import { PartyChat } from './party-chat.entity'
 import { PartyParticipant } from './party-participant.entity'
 import { PartyStatus } from './party-status.entity'
@@ -58,4 +59,10 @@ export class Party extends BaseEntity {
 
   @OneToMany(() => PartyChat, (partyChat) => partyChat.party)
   chats: PartyChat[]
+
+  @ManyToOne(
+    () => DeliveryPlatform,
+    (deliveryPlatform) => deliveryPlatform.parties,
+  )
+  deliveryPlatform: DeliveryPlatform
 }
