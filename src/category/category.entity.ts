@@ -1,16 +1,8 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity } from 'typeorm'
+import { ClassificationEntity } from '../public/classification.entity'
 
 @Entity()
-export class Category extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number
-
-  @Column({ length: 30, unique: true })
-  name: string
-
+export class Category extends ClassificationEntity {
   @Column({ length: 255 })
   imageUrl: string
-
-  @Column({ length: 30, unique: true })
-  code: string
 }
