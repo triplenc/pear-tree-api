@@ -8,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 import { Notification } from '../notifications/notification.entity'
+import { PartyParticipant } from '../party/party-participant.entity'
 import { UserAddress } from './user-addresses.entity'
 import { UserDetail } from './user-detail.entity'
 
@@ -31,4 +32,10 @@ export class User extends BaseEntity {
 
   @OneToMany(() => Notification, (notification) => notification.user)
   notifications: Notification[]
+
+  @OneToMany(
+    () => PartyParticipant,
+    (partyParticipant) => partyParticipant.user,
+  )
+  partyParticipants: PartyParticipant[]
 }

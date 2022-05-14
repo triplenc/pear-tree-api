@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
+import { PartyParticipant } from './party-participant.entity'
 
 @Entity()
 export class Party extends BaseEntity {
@@ -31,4 +38,10 @@ export class Party extends BaseEntity {
 
   @Column({ nullable: true })
   hostDeliveryFee: number
+
+  @OneToMany(
+    () => PartyParticipant,
+    (partyParticipant) => partyParticipant.party,
+  )
+  partyParticipants: PartyParticipant[]
 }
