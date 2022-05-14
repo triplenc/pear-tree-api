@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 import { User } from '../users/users.entity'
+import { NotificationType } from './notification-type.entity'
 
 @Entity()
 export class Notification extends BaseEntity {
@@ -20,4 +21,7 @@ export class Notification extends BaseEntity {
 
   @ManyToOne(() => User, (user) => user.notifications)
   user: User
+
+  @ManyToOne(() => NotificationType, (type) => type.notifications)
+  type: NotificationType
 }
