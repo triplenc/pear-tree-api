@@ -3,8 +3,10 @@ import {
   Column,
   Entity,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
+import { Category } from '../category/category.entity'
 import { PartyParticipant } from './party-participant.entity'
 
 @Entity()
@@ -44,4 +46,7 @@ export class Party extends BaseEntity {
     (partyParticipant) => partyParticipant.party,
   )
   partyParticipants: PartyParticipant[]
+
+  @OneToOne(() => Category)
+  category: Category
 }
