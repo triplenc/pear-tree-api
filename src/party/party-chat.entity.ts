@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
+import { Party } from './party.entity'
 
 @Entity()
 export class PartyChat extends BaseEntity {
@@ -7,4 +14,7 @@ export class PartyChat extends BaseEntity {
 
   @Column({ length: 500 })
   message: string
+
+  @ManyToOne(() => Party, (party) => party.chats)
+  party: Party
 }

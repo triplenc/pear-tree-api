@@ -8,6 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 import { Category } from '../category/category.entity'
+import { PartyChat } from './party-chat.entity'
 import { PartyParticipant } from './party-participant.entity'
 import { PartyStatus } from './party-status.entity'
 
@@ -54,4 +55,7 @@ export class Party extends BaseEntity {
 
   @ManyToOne(() => PartyStatus, (partyStatus) => partyStatus.parties)
   status: PartyStatus
+
+  @OneToMany(() => PartyChat, (partyChat) => partyChat.party)
+  chats: PartyChat[]
 }
