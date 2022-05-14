@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
+import { User } from './users.entity'
 
 @Entity()
 export class UserAddress extends BaseEntity {
@@ -19,4 +26,7 @@ export class UserAddress extends BaseEntity {
 
   @Column()
   isRecent: boolean
+
+  @ManyToOne(() => User, (user) => user.addresses)
+  user: User
 }
