@@ -1,6 +1,6 @@
 import { Entity, OneToMany } from 'typeorm'
 import { ClassificationEntity } from '../public/classification.entity'
-import { PartyParticipant } from './party-participant.entity'
+import { PartyParticipant } from './party-participants.entity'
 
 @Entity()
 export class ParticipantStatus extends ClassificationEntity {

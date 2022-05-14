@@ -5,8 +5,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { PartyImageType } from './party-image-type.entity'
-import { Party } from './party.entity'
+import { Party } from './parties.entity'
+import { PartyImageType } from './party-image-types.entity'
 
 @Entity()
 export class PartyImage extends BaseEntity {

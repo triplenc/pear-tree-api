@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 import { User } from '../users/users.entity'
-import { NotificationType } from './notification-type.entity'
+import { NotificationType } from './notification-types.entity'
 
 @Entity()
 export class Notification extends BaseEntity {

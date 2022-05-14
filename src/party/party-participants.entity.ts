@@ -1,7 +1,7 @@
 import { BaseEntity, Entity, ManyToOne } from 'typeorm'
 import { User } from '../users/users.entity'
-import { ParticipantStatus } from './participant-status.entity'
-import { Party } from './party.entity'
+import { ParticipantStatus } from './participant-statuses.entity'
+import { Party } from './parties.entity'
 
 @Entity()
 export class PartyParticipant extends BaseEntity {

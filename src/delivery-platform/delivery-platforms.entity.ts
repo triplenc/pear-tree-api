@@ -1,5 +1,5 @@
 import { Entity, OneToMany } from 'typeorm'
-import { Party } from '../party/party.entity'
+import { Party } from '../party/parties.entity'
 import { ClassificationEntity } from '../public/classification.entity'
 
 @Entity()

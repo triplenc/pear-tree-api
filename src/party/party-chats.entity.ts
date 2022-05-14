@@ -5,8 +5,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { PartyChatMessageType } from './party-chat-message-type.entity'
-import { Party } from './party.entity'
+import { Party } from './parties.entity'
+import { PartyChatMessageType } from './party-chat-message-types.entity'
 
 @Entity()
 export class PartyChat extends BaseEntity {

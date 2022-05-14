@@ -7,10 +7,10 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { Notification } from '../notifications/notification.entity'
-import { PartyParticipant } from '../party/party-participant.entity'
+import { Notification } from '../notifications/notifications.entity'
+import { PartyParticipant } from '../party/party-participants.entity'
 import { UserAddress } from './user-addresses.entity'
-import { UserDetail } from './user-detail.entity'
+import { UserDetail } from './user-details.entity'
 
 @Entity()
 export class User extends BaseEntity {

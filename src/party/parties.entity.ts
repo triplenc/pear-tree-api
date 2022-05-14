@@ -7,12 +7,12 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { Category } from '../category/category.entity'
-import { DeliveryPlatform } from '../delivery-platform/delivery-platform.entity'
-import { PartyChat } from './party-chat.entity'
-import { PartyImage } from './party-image.entity'
-import { PartyParticipant } from './party-participant.entity'
-import { PartyStatus } from './party-status.entity'
+import { Category } from '../category/categories.entity'
+import { DeliveryPlatform } from '../delivery-platform/delivery-platforms.entity'
+import { PartyChat } from './party-chats.entity'
+import { PartyImage } from './party-images.entity'
+import { PartyParticipant } from './party-participants.entity'
+import { PartyStatus } from './party-statuses.entity'
 
 @Entity()
 export class Party extends BaseEntity {

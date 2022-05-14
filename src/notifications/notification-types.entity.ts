@@ -1,6 +1,6 @@
 import { Entity, OneToMany } from 'typeorm'
 import { ClassificationEntity } from '../public/classification.entity'
-import { Notification } from './notification.entity'
+import { Notification } from './notifications.entity'
 
 @Entity()
 export class NotificationType extends ClassificationEntity {
