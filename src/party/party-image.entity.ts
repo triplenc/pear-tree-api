@@ -1,4 +1,11 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
+import { Party } from './party.entity'
 
 @Entity()
 export class PartyImage extends BaseEntity {
@@ -7,4 +14,7 @@ export class PartyImage extends BaseEntity {
 
   @Column({ length: 255 })
   imageUrl: string
+
+  @ManyToOne(() => Party, (party) => party.images)
+  party: Party
 }
