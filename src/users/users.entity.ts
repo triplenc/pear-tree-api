@@ -7,6 +7,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
+import { Notification } from '../notifications/notification.entity'
 import { UserAddress } from './user-addresses.entity'
 import { UserDetail } from './user-detail.entity'
 
@@ -27,4 +28,7 @@ export class User extends BaseEntity {
   @OneToOne(() => UserDetail)
   @JoinColumn()
   detail: UserDetail
+
+  @OneToMany(() => Notification, (notification) => notification.user)
+  notifications: Notification[]
 }
