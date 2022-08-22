@@ -1,10 +1,7 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { Column } from 'typeorm'
+import { DefaultEntity } from './default.entity'
 
-@Entity()
-export abstract class ClassificationEntity extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number
-
+export abstract class ClassificationEntity extends DefaultEntity {
   @Column({ length: 30 })
   code: string
 
