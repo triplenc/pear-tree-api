@@ -1,38 +1,33 @@
-import {
-  BaseEntity,
-  Column,
-  Entity,
-  ManyToOne,
-  OneToMany,
-  OneToOne,
-  PrimaryGeneratedColumn,
-} from 'typeorm'
+import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm'
 import { Category } from '../category/categories.entity'
+import { ADDRESS_LENGTH } from '../constants'
+import { DefaultEntity } from '../default.entity'
 import { DeliveryPlatform } from '../delivery-platform/delivery-platforms.entity'
+import { User } from '../user/users.entity'
+import { LastMessage } from './last-messages.entity'
 import { PartyChat } from './party-chats.entity'
-import { PartyImage } from './party-images.entity'
 import { PartyParticipant } from './party-participants.entity'
 import { PartyStatus } from './party-statuses.entity'
 
 @Entity()
-export class Party extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number
-
+export class Party extends DefaultEntity {
   @Column({ length: 50 })
   shopName: string
 
   @Column({ length: 40 })
-  pickUpLatitude: string
+  latitude: string
 
   @Column({ length: 40 })
-  pickUpLongitude: string
+  longitude: string
 
-  @Column({ length: 200 })
-  pickUpAddress: string
+  @Column({ length: ADDRESS_LENGTH })
+  address: string
+
+  @Column({ length: ADDRESS_LENGTH })
+  extraAddress: string
 
   @Column({ type: 'datetime' })
-  participateDeadline: Date
+  deadline: Date
 
   @Column()
   participantLimit: number
@@ -50,23 +45,26 @@ export class Party extends BaseEntity {
     () => PartyParticipant,
     (partyParticipant) => partyParticipant.party,
   )
-  partyParticipants: PartyParticipant[]
+  partyParticipantList: PartyParticipant[]
 
-  @OneToOne(() => Category)
+  @ManyToOne(() => Category, (category) => category.partyList)
   category: Category
 
-  @ManyToOne(() => PartyStatus, (partyStatus) => partyStatus.parties)
+  @ManyToOne(() => PartyStatus, (partyStatus) => partyStatus.partyList)
   status: PartyStatus
 
   @OneToMany(() => PartyChat, (partyChat) => partyChat.party)
-  chats: PartyChat[]
+  chatList: PartyChat[]
 
   @ManyToOne(
     () => DeliveryPlatform,
-    (deliveryPlatform) => deliveryPlatform.parties,
+    (deliveryPlatform) => deliveryPlatform.partyList,
   )
   deliveryPlatform: DeliveryPlatform
 
-  @OneToMany(() => PartyImage, (partyImage) => partyImage.party)
-  images: PartyImage[]
+  @OneToOne(() => LastMessage, (lastMessage) => lastMessage.party)
+  lastMessage: LastMessage
+
+  @ManyToOne(() => User, (user) => user.hostedPartyList)
+  host: User
 }
