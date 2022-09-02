@@ -32,6 +32,12 @@ export class User extends DefaultEntity {
   @Column({ length: 40, nullable: true })
   longitude: string
 
+  @Column({ length: 20, nullable: true })
+  username: string
+
+  @Column({ nullable: true })
+  password: string
+
   @OneToOne(() => UserAccount, (userAccount) => userAccount.user)
   account: UserAccount
 
