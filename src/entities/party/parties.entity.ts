@@ -9,7 +9,7 @@ import { PartyChat } from './party-chats.entity'
 import { PartyParticipant } from './party-participants.entity'
 import { PartyStatus } from './party-statuses.entity'
 
-@Entity()
+@Entity({ name: 'parties' })
 export class Party extends DefaultEntity {
   @Column({ length: 50 })
   shopName: string

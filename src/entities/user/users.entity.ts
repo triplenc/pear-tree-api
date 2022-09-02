@@ -6,7 +6,7 @@ import { PartyChat } from '../party/party-chats.entity'
 import { PartyParticipant } from '../party/party-participants.entity'
 import { UserAccount } from './user-accounts.entity'
 
-@Entity()
+@Entity({ name: 'users' })
 export class User extends DefaultEntity {
   @Column({ length: 8 })
   nickname: string

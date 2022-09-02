@@ -11,7 +11,7 @@ import { Party } from './parties.entity'
 import { PartyChatImageType } from './party-chat-image-types.entity'
 import { PartyChatMessageType } from './party-chat-message-types.entity'
 
-@Entity()
+@Entity({ name: 'partyChats' })
 export class PartyChat extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number

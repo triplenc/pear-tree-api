@@ -1,10 +1,19 @@
-import { BaseEntity, Column, Entity, ManyToOne } from 'typeorm'
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
 import { User } from '../user/users.entity'
 import { Party } from './parties.entity'
 import { ParticipantStatus } from './party-participant-statuses.entity'
 
-@Entity()
+@Entity({ name: 'partyParticipants' })
 export class PartyParticipant extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number
+
   @Column()
   unseenMessageCount: number
 

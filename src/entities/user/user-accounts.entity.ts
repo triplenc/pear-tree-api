@@ -3,7 +3,7 @@ import { DefaultEntity } from '../default.entity'
 import { Bank } from './banks.entity'
 import { User } from './users.entity'
 
-@Entity()
+@Entity({ name: 'userAccounts' })
 export class UserAccount extends DefaultEntity {
   @Column({ length: 10 })
   accountName: string

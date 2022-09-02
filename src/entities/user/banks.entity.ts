@@ -3,7 +3,7 @@ import { ClassificationEntity } from '../classification.entity'
 import { IMAGE_URL_LENGTH } from '../constants'
 import { UserAccount } from './user-accounts.entity'
 
-@Entity()
+@Entity({ name: 'banks' })
 export class Bank extends ClassificationEntity {
   @Column({ length: IMAGE_URL_LENGTH })
   imageUrl: string
