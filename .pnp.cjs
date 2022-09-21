@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/supertest", "npm:2.0.12"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.16.0"],\
             ["@typescript-eslint/parser", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.16.0"],\
+            ["class-validator", "npm:0.13.2"],\
             ["eslint", "npm:8.12.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
             ["eslint-import-resolver-node", "npm:0.3.6"],\
@@ -1344,7 +1345,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["axios", "npm:0.26.1"],\
             ["cache-manager", null],\
             ["class-transformer", null],\
-            ["class-validator", null],\
+            ["class-validator", "npm:0.13.2"],\
             ["iterare", "npm:1.2.1"],\
             ["reflect-metadata", "npm:0.1.13"],\
             ["rxjs", "npm:7.5.5"],\
@@ -3410,6 +3411,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cjs-module-lexer-npm-1.2.2-473ce063ea-977f3f042b.zip/node_modules/cjs-module-lexer/",\
           "packageDependencies": [\
             ["cjs-module-lexer", "npm:1.2.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["class-validator", [\
+        ["npm:0.13.2", {\
+          "packageLocation": "./.yarn/cache/class-validator-npm-0.13.2-915206252c-0deb4c29fa.zip/node_modules/class-validator/",\
+          "packageDependencies": [\
+            ["class-validator", "npm:0.13.2"],\
+            ["libphonenumber-js", "npm:1.10.13"],\
+            ["validator", "npm:13.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6783,6 +6795,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["libphonenumber-js", [\
+        ["npm:1.10.13", {\
+          "packageLocation": "./.yarn/cache/libphonenumber-js-npm-1.10.13-20d15034d2-a1740bbed8.zip/node_modules/libphonenumber-js/",\
+          "packageDependencies": [\
+            ["libphonenumber-js", "npm:1.10.13"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lines-and-columns", [\
         ["npm:1.2.4", {\
           "packageLocation": "./.yarn/cache/lines-and-columns-npm-1.2.4-d6c7cc5799-0c37f9f7fa.zip/node_modules/lines-and-columns/",\
@@ -7810,6 +7831,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/supertest", "npm:2.0.12"],\
             ["@typescript-eslint/eslint-plugin", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.16.0"],\
             ["@typescript-eslint/parser", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.16.0"],\
+            ["class-validator", "npm:0.13.2"],\
             ["eslint", "npm:8.12.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
             ["eslint-import-resolver-node", "npm:0.3.6"],\
@@ -9659,6 +9681,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/istanbul-lib-coverage", "npm:2.0.4"],\
             ["convert-source-map", "npm:1.8.0"],\
             ["source-map", "npm:0.7.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["validator", [\
+        ["npm:13.7.0", {\
+          "packageLocation": "./.yarn/cache/validator-npm-13.7.0-624277e841-2b83283de1.zip/node_modules/validator/",\
+          "packageDependencies": [\
+            ["validator", "npm:13.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\
