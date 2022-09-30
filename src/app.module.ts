@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { TypeOrmConfigModule } from './configs/orm/type-orm.module'
 import { TypeOrmConfigService } from './configs/orm/type-orm.service'
+import { UserModule } from './user/user.module'
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { TypeOrmConfigService } from './configs/orm/type-orm.service'
       useClass: TypeOrmConfigService,
       inject: [TypeOrmConfigService],
     }),
+    UserModule,
   ],
   controllers: [],
   providers: [],

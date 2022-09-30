@@ -1,23 +1,24 @@
 import { Column, Entity, OneToMany, OneToOne } from 'typeorm'
-import { ADDRESS_LENGTH } from '../constants'
+import { ADDRESS_LENGTH } from '../../common/constants'
 import { DefaultEntity } from '../default.entity'
 import { Party } from '../party/parties.entity'
 import { PartyChat } from '../party/party-chats.entity'
 import { PartyParticipant } from '../party/party-participants.entity'
 import { UserAccount } from './user-accounts.entity'
 
+// TODO(SeongJaeSong): 본인인증 도입 후 phone, name, sex non-nullable로 변경
 @Entity({ name: 'users' })
 export class User extends DefaultEntity {
   @Column({ length: 8 })
   nickname: string
 
-  @Column({ length: 11, unique: true })
+  @Column({ length: 11, unique: true, nullable: true })
   phone: string
 
-  @Column({ length: 10 })
+  @Column({ length: 10, nullable: true })
   name: string
 
-  @Column()
+  @Column({ nullable: true })
   sex: boolean
 
   @Column({ length: ADDRESS_LENGTH, nullable: true })
@@ -32,8 +33,8 @@ export class User extends DefaultEntity {
   @Column({ length: 40, nullable: true })
   longitude: string
 
-  @Column({ length: 20, nullable: true })
-  username: string
+  @Column({ length: 150, nullable: true })
+  email: string
 
   @Column({ nullable: true })
   password: string

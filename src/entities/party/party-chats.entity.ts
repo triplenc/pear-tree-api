@@ -5,7 +5,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { IMAGE_URL_LENGTH } from '../constants'
+import { IMAGE_URL_LENGTH } from '../../common/constants'
 import { User } from '../user/users.entity'
 import { Party } from './parties.entity'
 import { PartyChatImageType } from './party-chat-image-types.entity'

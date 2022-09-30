@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany } from 'typeorm'
+import { IMAGE_URL_LENGTH } from '../../common/constants'
 import { ClassificationEntity } from '../classification.entity'
-import { IMAGE_URL_LENGTH } from '../constants'
 import { UserAccount } from './user-accounts.entity'
 
 @Entity({ name: 'banks' })

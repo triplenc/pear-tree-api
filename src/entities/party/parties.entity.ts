@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, OneToMany, OneToOne } from 'typeorm'
+import { ADDRESS_LENGTH } from '../../common/constants'
 import { Category } from '../category/categories.entity'
-import { ADDRESS_LENGTH } from '../constants'
 import { DefaultEntity } from '../default.entity'
 import { DeliveryPlatform } from '../delivery-platform/delivery-platforms.entity'
 import { User } from '../user/users.entity'

@@ -21,10 +21,9 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js', 'dist/', '.yarn/'],
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'warn',
+    '@typescript-eslint/no-explicit-any': 'error',
     'no-await-in-loop': 'off',
     'no-implicit-coercion': 'error',
     '@typescript-eslint/array-type': 'error',
@@ -34,5 +33,6 @@ module.exports = {
       'error',
       { assertFunctionNames: ['expect', 'request.**.expect'] },
     ],
+    '@typescript-eslint/no-empty-interface': 'off',
   },
 }
