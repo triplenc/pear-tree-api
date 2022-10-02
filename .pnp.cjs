@@ -51,6 +51,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.38.1"],\
             ["@typescript-eslint/parser", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.38.1"],\
             ["bcrypt", "npm:5.0.1"],\
+            ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
@@ -1434,7 +1435,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/rxjs", null],\
             ["axios", "npm:0.27.2"],\
             ["cache-manager", null],\
-            ["class-transformer", null],\
+            ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
             ["iterare", "npm:1.2.1"],\
             ["reflect-metadata", "npm:0.1.13"],\
@@ -1557,7 +1558,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/class-validator", null],\
             ["@types/nestjs__common", null],\
             ["@types/reflect-metadata", null],\
-            ["class-transformer", null],\
+            ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
             ["reflect-metadata", "npm:0.1.13"]\
           ],\
@@ -3547,6 +3548,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cjs-module-lexer-npm-1.2.2-473ce063ea-977f3f042b.zip/node_modules/cjs-module-lexer/",\
           "packageDependencies": [\
             ["cjs-module-lexer", "npm:1.2.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["class-transformer", [\
+        ["npm:0.5.1", {\
+          "packageLocation": "./.yarn/cache/class-transformer-npm-0.5.1-96b5161e6c-f191c8b4cc.zip/node_modules/class-transformer/",\
+          "packageDependencies": [\
+            ["class-transformer", "npm:0.5.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8165,6 +8175,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.38.1"],\
             ["@typescript-eslint/parser", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:5.38.1"],\
             ["bcrypt", "npm:5.0.1"],\
+            ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
