@@ -3,8 +3,11 @@ import { InjectRepository } from '@nestjs/typeorm'
 import * as bcrypt from 'bcrypt'
 import * as jwt from 'jsonwebtoken'
 import { Repository } from 'typeorm'
+import { SuccessRO } from '../common/common.interface'
+import { SUCCESS_RO } from '../common/constants'
 import { User } from '../entities'
-import { SignInDto, SignUpDto } from './dto'
+import { SignInDto, SignUpDto, UpdateAddressDto } from './dto'
+import { UpdateNicknameDto } from './dto/update-nickname.dto'
 import { SignInRO, SignUpRO } from './user.interface'
 
 @Injectable()
@@ -19,6 +22,18 @@ export class UserService {
     return jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
       expiresIn: '30d',
     })
+  }
+
+  async findById(id: number): Promise<User> {
+    const user = await this.userRepository.findOne({
+      where: { id },
+    })
+
+    if (!user) {
+      throw new HttpException('user not found', HttpStatus.NOT_FOUND)
+    }
+
+    return user
   }
 
   async signUp({
@@ -74,5 +89,38 @@ export class UserService {
     }
 
     return { token: this.generateJwtToken(user) }
+  }
+
+  async updateAddress(
+    { address, extraAddress, longitude, latitude }: UpdateAddressDto,
+    user: User,
+  ): Promise<SuccessRO> {
+    await this.userRepository.update(
+      {
+        id: user.id,
+      },
+      {
+        address,
+        extraAddress,
+        longitude,
+        latitude,
+      },
+    )
+
+    return SUCCESS_RO
+  }
+
+  async updateNickname(
+    { nickname }: UpdateNicknameDto,
+    user: User,
+  ): Promise<SuccessRO> {
+    await this.userRepository.update(
+      {
+        id: user.id,
+      },
+      { nickname },
+    )
+
+    return SUCCESS_RO
   }
 }
