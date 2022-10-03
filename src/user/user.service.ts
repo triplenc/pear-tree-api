@@ -150,10 +150,10 @@ export class UserService {
 
     userAccount.accountNumber = accountNumber
     userAccount.accountName = accountName
-    userAccount.bank = Promise.resolve(bank)
+    userAccount.bank = bank
     await userAccount.save()
 
-    user.account = Promise.resolve(userAccount)
+    user.account = userAccount
     await user.save()
 
     return SUCCESS_RO

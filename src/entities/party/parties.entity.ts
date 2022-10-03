@@ -51,10 +51,10 @@ export class Party extends DefaultEntity {
   partyParticipantList: PartyParticipant[]
 
   @ManyToOne(() => Category, (category) => category.partyList)
-  category: Promise<Category>
+  category: Category
 
   @ManyToOne(() => PartyStatus, (partyStatus) => partyStatus.partyList)
-  status: Promise<PartyStatus>
+  status: PartyStatus
 
   @OneToMany(() => PartyChat, (partyChat) => partyChat.party)
   chatList: PartyChat[]
@@ -63,11 +63,11 @@ export class Party extends DefaultEntity {
     () => DeliveryPlatform,
     (deliveryPlatform) => deliveryPlatform.partyList,
   )
-  deliveryPlatform: Promise<DeliveryPlatform>
+  deliveryPlatform: DeliveryPlatform
 
   @OneToOne(() => LastMessage, (lastMessage) => lastMessage.party)
   lastMessage: LastMessage
 
   @ManyToOne(() => User, (user) => user.hostedPartyList)
-  host: Promise<User>
+  host: User
 }

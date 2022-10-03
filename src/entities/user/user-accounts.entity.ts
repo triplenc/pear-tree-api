@@ -13,8 +13,8 @@ export class UserAccount extends DefaultEntity {
 
   @OneToOne(() => User, (user) => user.account)
   @JoinColumn()
-  user: Promise<User>
+  user: User
 
   @ManyToOne(() => Bank, (bank) => bank.userAccountList)
-  bank: Promise<Bank>
+  bank: Bank
 }

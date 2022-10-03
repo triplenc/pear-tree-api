@@ -14,7 +14,7 @@ export class PartyParticipant extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column()
+  @Column({ default: 0 })
   unseenMessageCount: number
 
   @ManyToOne(() => User, (user) => user.partyParticipantList)
