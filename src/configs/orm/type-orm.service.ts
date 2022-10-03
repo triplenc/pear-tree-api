@@ -18,7 +18,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       timezone: '+09:00',
       // TODO(SeongJaeSong): 개발 후 synchronize, dropSchema 옵션 제거
       synchronize: Boolean(Number(process.env.SYNC)),
-      dropSchema: Boolean(Number(process.env.SYNC)),
+      // dropSchema: Boolean(Number(process.env.SYNC)),
     }
   }
 }
