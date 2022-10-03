@@ -6,7 +6,10 @@ import { Repository } from 'typeorm'
 import { SuccessRO } from '../common/common.interface'
 import { SUCCESS_RO } from '../common/constants'
 import { User } from '../entities'
+import { Bank } from '../entities/user/banks.entity'
+import { UserAccount } from '../entities/user/user-accounts.entity'
 import { SignInDto, SignUpDto, UpdateAddressDto } from './dto'
+import { UpdateAccountDto } from './dto/update-account.dto'
 import { UpdateNicknameDto } from './dto/update-nickname.dto'
 import { SignInRO, SignUpRO } from './user.interface'
 
@@ -15,6 +18,10 @@ export class UserService {
   constructor(
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
+    @InjectRepository(Bank)
+    private readonly bankRepository: Repository<Bank>,
+    @InjectRepository(UserAccount)
+    private readonly userAccountRepository: Repository<UserAccount>,
   ) {}
 
   private generateJwtToken(user: User) {
@@ -120,6 +127,34 @@ export class UserService {
       },
       { nickname },
     )
+
+    return SUCCESS_RO
+  }
+
+  async updateAccount(
+    { bankCode, accountNumber, accountName }: UpdateAccountDto,
+    user: User,
+  ): Promise<SuccessRO> {
+    const bank = await this.bankRepository.findOne({
+      where: {
+        code: bankCode,
+      },
+    })
+
+    if (!bank) {
+      throw new HttpException('bank not found', HttpStatus.NOT_FOUND)
+    }
+
+    const userAccount =
+      (await user.account) ?? this.userAccountRepository.create()
+
+    userAccount.accountNumber = accountNumber
+    userAccount.accountName = accountName
+    userAccount.bank = Promise.resolve(bank)
+    await userAccount.save()
+
+    user.account = Promise.resolve(userAccount)
+    await user.save()
 
     return SUCCESS_RO
   }

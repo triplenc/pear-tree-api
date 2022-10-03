@@ -4,6 +4,7 @@ import { SuccessRO } from '../common/common.interface'
 import { ValidationPipe } from '../common/validation.pipe'
 import { User as UserEntity } from '../entities'
 import { SignInDto, SignUpDto, UpdateAddressDto } from './dto'
+import { UpdateAccountDto } from './dto/update-account.dto'
 import { UpdateNicknameDto } from './dto/update-nickname.dto'
 import { User } from './user.decorator'
 import { SignInRO, SignUpRO } from './user.interface'
@@ -39,5 +40,14 @@ export class UserController {
     @User() user: UserEntity,
   ): Promise<SuccessRO> {
     return await this.userService.updateNickname(updateNicknameDto, user)
+  }
+
+  @Put('account')
+  @UseGuards(AuthGuard)
+  async updateAccount(
+    @Body(ValidationPipe) updateAccountDto: UpdateAccountDto,
+    @User() user: UserEntity,
+  ): Promise<SuccessRO> {
+    return await this.userService.updateAccount(updateAccountDto, user)
   }
 }
