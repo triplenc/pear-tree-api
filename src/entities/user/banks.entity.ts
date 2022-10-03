@@ -8,6 +8,9 @@ export class Bank extends ClassificationEntity {
   @Column({ length: IMAGE_URL_LENGTH })
   imageUrl: string
 
+  @Column({ nullable: true })
+  priority: number
+
   @OneToMany(() => UserAccount, (userAccount) => userAccount.bank)
   userAccountList: UserAccount[]
 }

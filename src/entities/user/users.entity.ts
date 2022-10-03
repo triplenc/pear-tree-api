@@ -40,7 +40,7 @@ export class User extends DefaultEntity {
   password: string
 
   @OneToOne(() => UserAccount, (userAccount) => userAccount.user)
-  account: UserAccount
+  account: Promise<UserAccount>
 
   @OneToMany(
     () => PartyParticipant,

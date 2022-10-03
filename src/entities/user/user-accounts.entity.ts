@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, OneToOne } from 'typeorm'
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from 'typeorm'
 import { DefaultEntity } from '../default.entity'
 import { Bank } from './banks.entity'
 import { User } from './users.entity'
@@ -12,8 +12,9 @@ export class UserAccount extends DefaultEntity {
   accountNumber: string
 
   @OneToOne(() => User, (user) => user.account)
-  user: User
+  @JoinColumn()
+  user: Promise<User>
 
   @ManyToOne(() => Bank, (bank) => bank.userAccountList)
-  bank: Bank
+  bank: Promise<Bank>
 }

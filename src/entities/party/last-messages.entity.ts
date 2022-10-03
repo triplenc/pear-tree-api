@@ -1,4 +1,4 @@
-import { Column, Entity, OneToOne } from 'typeorm'
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm'
 import { DefaultEntity } from '../default.entity'
 import { Party } from './parties.entity'
 
@@ -8,5 +8,6 @@ export class LastMessage extends DefaultEntity {
   message: string
 
   @OneToOne(() => Party, (party) => party.lastMessage)
+  @JoinColumn()
   party: Party
 }
