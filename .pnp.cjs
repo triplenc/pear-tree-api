@@ -53,6 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bcrypt", "npm:5.0.1"],\
             ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
+            ["dayjs", "npm:1.11.5"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
             ["eslint-import-resolver-node", "npm:0.3.6"],\
@@ -3946,6 +3947,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/date-fns-npm-2.29.3-fef7e3c72c-e01cf5b62a.zip/node_modules/date-fns/",\
           "packageDependencies": [\
             ["date-fns", "npm:2.29.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dayjs", [\
+        ["npm:1.11.5", {\
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.11.5-a825142dc5-e3bbaa7b48.zip/node_modules/dayjs/",\
+          "packageDependencies": [\
+            ["dayjs", "npm:1.11.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8177,6 +8187,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bcrypt", "npm:5.0.1"],\
             ["class-transformer", "npm:0.5.1"],\
             ["class-validator", "npm:0.13.2"],\
+            ["dayjs", "npm:1.11.5"],\
             ["eslint", "npm:8.24.0"],\
             ["eslint-config-prettier", "virtual:9fd17d91c14711cba40693f7a83977688b883868741225412aa4ce149ff598c98195f387e37381e32f997b82454b413d8611a9494b0f4b2ee5597bb964a1e5c6#npm:8.5.0"],\
             ["eslint-import-resolver-node", "npm:0.3.6"],\
