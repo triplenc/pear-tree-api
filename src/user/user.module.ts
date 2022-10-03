@@ -11,10 +11,9 @@ import { UserService } from './user.service'
   imports: [TypeOrmModule.forFeature([User, Bank, UserAccount])],
   controllers: [UserController],
   providers: [UserService],
-  exports: [],
 })
 export class UserModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
+  configure(consumer: MiddlewareConsumer): void {
     consumer.apply(AuthMiddleware).forRoutes('/')
   }
 }

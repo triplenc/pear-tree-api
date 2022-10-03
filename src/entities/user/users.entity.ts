@@ -49,7 +49,7 @@ export class User extends DefaultEntity {
   partyParticipantList: PartyParticipant[]
 
   @OneToMany(() => Party, (party) => party.host)
-  hostedPartyList: Party[]
+  hostedPartyList: Promise<Party[]>
 
   @OneToMany(() => PartyChat, (partyChat) => partyChat.user)
   partyChatList: PartyChat[]

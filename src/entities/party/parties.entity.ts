@@ -32,7 +32,7 @@ export class Party extends DefaultEntity {
   @Column()
   participantLimit: number
 
-  @Column()
+  @Column({ nullable: true })
   originalDeliveryFee: number
 
   @Column({ nullable: true })
@@ -41,6 +41,9 @@ export class Party extends DefaultEntity {
   @Column({ nullable: true })
   hostDeliveryFee: number
 
+  @Column({ nullable: false })
+  deliveryPlatformUrl: string
+
   @OneToMany(
     () => PartyParticipant,
     (partyParticipant) => partyParticipant.party,
@@ -48,10 +51,10 @@ export class Party extends DefaultEntity {
   partyParticipantList: PartyParticipant[]
 
   @ManyToOne(() => Category, (category) => category.partyList)
-  category: Category
+  category: Promise<Category>
 
   @ManyToOne(() => PartyStatus, (partyStatus) => partyStatus.partyList)
-  status: PartyStatus
+  status: Promise<PartyStatus>
 
   @OneToMany(() => PartyChat, (partyChat) => partyChat.party)
   chatList: PartyChat[]
@@ -60,11 +63,11 @@ export class Party extends DefaultEntity {
     () => DeliveryPlatform,
     (deliveryPlatform) => deliveryPlatform.partyList,
   )
-  deliveryPlatform: DeliveryPlatform
+  deliveryPlatform: Promise<DeliveryPlatform>
 
   @OneToOne(() => LastMessage, (lastMessage) => lastMessage.party)
   lastMessage: LastMessage
 
   @ManyToOne(() => User, (user) => user.hostedPartyList)
-  host: User
+  host: Promise<User>
 }
