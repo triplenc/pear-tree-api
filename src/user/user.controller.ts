@@ -14,16 +14,19 @@ import { UserService } from './user.service'
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  // 로그인
   @Post('sign-up')
   async signUp(@Body(ValidationPipe) signUpDto: SignUpDto): Promise<SignUpRO> {
     return await this.userService.signUp(signUpDto)
   }
 
+  // 회원가입
   @Post('sign-in')
   async signIn(@Body(ValidationPipe) signInDto: SignInDto): Promise<SignInRO> {
     return await this.userService.signIn(signInDto)
   }
 
+  // 위치 등록&수정
   @Put('address')
   @UseGuards(AuthGuard)
   async updateAddress(
@@ -33,6 +36,7 @@ export class UserController {
     return await this.userService.updateAddress(updateAddressDto, user)
   }
 
+  // 닉네임 등록&수정
   @Put('nickname')
   @UseGuards(AuthGuard)
   async updateNickname(
@@ -42,6 +46,7 @@ export class UserController {
     return await this.userService.updateNickname(updateNicknameDto, user)
   }
 
+  // 계좌 등록&수정
   @Put('account')
   @UseGuards(AuthGuard)
   async updateAccount(
