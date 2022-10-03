@@ -4,10 +4,15 @@ import * as dayjs from 'dayjs'
 import { Not, Repository } from 'typeorm'
 import { SuccessRO } from '../common/common.interface'
 import { SUCCESS_RO } from '../common/constants'
-import { Category, Party, User } from '../entities'
-import { DeliveryPlatform } from '../entities/delivery-platform/delivery-platforms.entity'
-import { PartyStatus } from '../entities/party/party-statuses.entity'
+import {
+  Category,
+  DeliveryPlatform,
+  Party,
+  PartyStatus,
+  User,
+} from '../entities'
 import { CreatePartyDto } from './dto'
+import { GetHostedPartyListRO } from './party.interface'
 
 @Injectable()
 export class PartyService {
@@ -103,12 +108,59 @@ export class PartyService {
       deadline: dayjs().add(deadline, 'minute').endOf('minute').format(),
     })
 
-    party.host = Promise.resolve(user)
-    party.category = Promise.resolve(category)
-    party.deliveryPlatform = Promise.resolve(deliveryPlatform)
-    party.status = Promise.resolve(waitGuestOrderPartyStatus)
+    party.host = user
+    party.category = category
+    party.deliveryPlatform = deliveryPlatform
+    party.status = waitGuestOrderPartyStatus
     await party.save()
 
     return SUCCESS_RO
+  }
+
+  async getHostedPartyList(user: User): Promise<GetHostedPartyListRO[]> {
+    // TODO(SeongJaeSong): Lazy loading 방식으로 변경
+    const parties = await this.partyRepository.find({
+      select: {
+        id: true,
+        deadline: true,
+        latitude: true,
+        longitude: true,
+        participantLimit: true,
+        shopName: true,
+        address: true,
+        extraAddress: true,
+        status: {
+          id: true,
+          code: true,
+          name: true,
+        },
+        partyParticipantList: {
+          id: true,
+          status: {
+            id: true,
+            code: true,
+            name: true,
+          },
+          user: {
+            id: true,
+            nickname: true,
+          },
+        },
+      },
+      where: {
+        host: {
+          id: user.id,
+        },
+      },
+      relations: {
+        status: true,
+        partyParticipantList: {
+          status: true,
+          user: true,
+        },
+      },
+    })
+
+    return parties
   }
 }
