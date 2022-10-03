@@ -6,6 +6,7 @@ import { TypeOrmConfigModule } from './configs/orm/type-orm.module'
 import { TypeOrmConfigService } from './configs/orm/type-orm.service'
 import { UserModule } from './user/user.module'
 import { CategoryModule } from './category/category.module';
+import { PartyModule } from './party/party.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { CategoryModule } from './category/category.module';
     UserModule,
     AuthModule,
     CategoryModule,
+    PartyModule,
   ],
   controllers: [],
   providers: [],
